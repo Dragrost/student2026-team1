@@ -1,13 +1,20 @@
 package registration;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class UserRegistration {
 
-    // Базовая реализация: email валиден, если содержит "@" и "."
+    private static final String EMAIL_PATTERN = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+    private static final Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+
+    // Email валиден, если подходит под маску
     public boolean validateEmail(String email) {
-        if (email == null || email.isBlank()) {
+        if (email == null) {
             return false;
         }
-        return email.contains("@") && email.contains(".");
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     // Базовая реализация: пароль не короче 6 символов
