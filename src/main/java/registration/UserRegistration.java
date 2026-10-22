@@ -1,5 +1,8 @@
 package registration;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class UserRegistration {
 
     private static final String EMAIL_PATTERN = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
