@@ -10,9 +10,9 @@ public class UserRegistration {
         return email.contains("@") && email.contains(".");
     }
 
-    // Базовая реализация: пароль не короче 6 символов
+    // Базовая реализация: пароль не короче 6 символов и имеет хотя бы одну заглавную букву
      public boolean validatePassword(String password) {
-        return password != null && password.length() >= 6;
+        return password != null && password.length() >= 6 && password.matches(".*[A-ZА-ЯЁ].*");
     }
 
     // Базовая реализация: проверка совпадения паролей
